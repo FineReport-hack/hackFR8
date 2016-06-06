@@ -1,3 +1,5 @@
+cd /d %~dp0
+
 @echo off
 set /p frpath= Please enter the install path of your FineReport?
 set _trimmed=%frpath%
@@ -15,7 +17,7 @@ goto fail
 
 
 :hack
-set resourcepath=%frpath%\WEB-INF\resource
+set resourcepath=%frpath%\WEB-INF\resources
 if exist %resourcepath%  goto copyresource
 @echo No such folder %resourcepath%
 goto fail
